@@ -11,10 +11,10 @@
 
 int main(){
     
-    int a = 4;
-    void *p;
-    p = &a;
-    printf("%p\n",p);
+    enum Weekday {sun = 7,mon = 1,tue,wed,thu,fri,sat,haha = 7}workday,weekend;
+    
+    workday = haha;
+    printf("%d\n",workday);
     return 0;
 }
 
