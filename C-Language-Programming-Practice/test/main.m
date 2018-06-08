@@ -11,10 +11,21 @@
 
 int main(){
     
-    enum Weekday {sun = 7,mon = 1,tue,wed,thu,fri,sat,haha = 7}workday,weekend;
+    typedef struct{
+        int day;
+        int month;
+        int year;
+    }Date;
     
-    workday = haha;
-    printf("%d\n",workday);
+    Date a;
+    a.day = 1;
+    a.month = 1;
+    a.year = 1;
+    
+    typedef char * String;
+    String str = "dfadfa";
+    printf("%s\n",str);
+    printf("%d %d %d\n",a.year,a.month,a.day);
     return 0;
 }
 
