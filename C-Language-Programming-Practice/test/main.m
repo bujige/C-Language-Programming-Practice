@@ -11,21 +11,12 @@
 
 int main(){
     
-    typedef struct{
-        int day;
-        int month;
-        int year;
-    }Date;
+    int *p,a[5] = {1,3,5,7,9};
+    p = a;
+    printf("%d a[0] = %d a[1] = %d\n",*p++,a[0],a[1]);
     
-    Date a;
-    a.day = 1;
-    a.month = 1;
-    a.year = 1;
-    
-    typedef char * String;
-    String str = "dfadfa";
-    printf("%s\n",str);
-    printf("%d %d %d\n",a.year,a.month,a.day);
+    int i = 3;
+    printf("%d %d %d\n",i,++i,++i);
     return 0;
 }
 
