@@ -6,19 +6,82 @@
 //  Copyright © 2018年 Walking Boy. All rights reserved.
 //
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
+void testFun(int *n) {
+    printf("%d\n",*n);
+}
 
-int main(){
+int main()
+{
+    int n = 10;
+    testFun(&n);
     
-    int *p,a[5] = {1,3,5,7,9};
-    p = a;
-    printf("%d a[0] = %d a[1] = %d\n",*p++,a[0],a[1]);
+    //    int count(char *str);
+    //    long *getNum(char *str, int n);
+    //    void print(long num[], int n);
+    //    char str[50];
+    //    long *nums;
+    //    printf("Please enter a string:");
+    //    gets(str);
+    //    int len = count(str);
+    //    printf("There are %d numbers in the line, they are:\n", len);
+    //    nums = getNum(str, len);
+    //    print(nums, len);
     
-    int i = 3;
-    printf("%d %d %d\n",i,++i,++i);
     return 0;
 }
 
+
+
+int count(char *str){
+    int count = 0;
+    bool flag = false;
+    char c;
+    while((c=*str++)!='\0'){
+        if(c>='0' && c<='9'){
+            if(!flag){
+                count++;
+                flag = true;
+            }
+        }else{
+            flag = false;
+        }
+    }
+    return count;
+}
+
+long *getNum(char *str, int n){
+    void print(long num[], int n);
+    long numArr[n], num=0;
+    long *pn;
+    pn = numArr;
+    int i=0;
+    char c;
+    bool flag = false;
+    while((c=*str++)!='\0'){
+        if(c>='0' && c<='9'){
+            num = num*10+(c-'0');
+            flag = true;
+        }else if(flag){
+            numArr[i++] = num;
+            num = 0;
+            flag = false;
+        }
+    }
+    if(flag){
+        numArr[i++]=num;
+    }
+    print(pn, n);
+    return pn;
+}
+
+void print(long num[], int n){
+    for(int i=0; i<n; i++){
+        printf("%d ", num[i]);
+    }
+    printf("\n");
+}
 
 
